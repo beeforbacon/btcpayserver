@@ -23,6 +23,7 @@ namespace BTCPayServer.Models
             PaymentMethods = blob.SupportedPaymentMethods;
             SelectedPaymentMethod = PaymentMethods.First().ToString();
             Archived = data.Archived;
+            AutoApprove = blob.AutoApproveClaims;
             Title = blob.View.Title;
             Description = blob.View.Description;
             Amount = blob.Limit;
@@ -94,6 +95,7 @@ namespace BTCPayServer.Models
         public string AmountCollectedFormatted { get; set; }
         public string AmountFormatted { get; set; }
         public bool Archived { get; set; }
+        public bool AutoApprove { get; set; }
 
         public class PayoutLine
         {
